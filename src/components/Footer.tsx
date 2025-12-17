@@ -49,7 +49,16 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400 flex items-center justify-center">
-            Made with <Heart className="w-4 h-4 mx-2 text-red-500" /> for better kidney health
+            Made with <Heart className="w-4 h-4 mx-2 text-red-500" /> by{' '}
+            <a 
+              href="https://oneclikai.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition-colors mx-1"
+            >
+              OneClikAI
+            </a>{' '}
+            for better kidney health
           </p>
           <p className="text-gray-500 text-sm mt-2">
             &copy; {currentYear} Dr. P. Pavan Kumar. All rights reserved.

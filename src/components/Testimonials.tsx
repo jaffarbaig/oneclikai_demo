@@ -1,4 +1,7 @@
 import { Star, User } from 'lucide-react';
+import patient1 from '../assets/testimonials/patient1.jpeg';
+import patient2 from '../assets/testimonials/patient2.jpeg';
+import patient3 from '../assets/testimonials/patient3.jpeg';
 
 export default function Testimonials() {
   const testimonials = [
@@ -8,23 +11,23 @@ export default function Testimonials() {
       condition: 'Chronic Kidney Disease',
       rating: 5,
       text: 'Dr. Pavan Kumar has been an exceptional doctor. His thorough approach and compassionate care made managing my kidney disease much easier. Highly recommended!',
-      image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: patient1,
+    },
+    {
+      name: 'Shiva Krishna',
+      age: '40',
+      condition: 'Post-Transplant Patient',
+      rating: 5,
+      text: 'I received my kidney transplant under Dr. Pavan Kumar\'s care. The entire process was well-managed and the follow-up care has been excellent. I feel in safe hands.',
+      image: patient2,
     },
     {
       name: 'Priya Sharma',
       age: '45',
-      condition: 'Post-Transplant Patient',
-      rating: 5,
-      text: 'I received my kidney transplant under Dr. Pavan Kumar\'s care. The entire process was well-managed and the follow-up care has been excellent. I feel in safe hands.',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
-    },
-    {
-      name: 'Venkat Reddy',
-      age: '58',
       condition: 'Diabetic Kidney Disease',
       rating: 5,
       text: 'Dr. Pavan Kumar explained my condition clearly and provided a comprehensive treatment plan. His expertise in diabetic kidney disease is truly commendable.',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: patient3,
     },
   ];
 
@@ -48,12 +51,16 @@ export default function Testimonials() {
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 border border-gray-100"
             >
               <div className="flex items-center mb-6">
-                <div className="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 bg-gray-200">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 bg-gray-200 flex items-center justify-center">
+                  {testimonial.image ? (
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <User className="w-8 h-8 text-gray-400" />
+                  )}
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-gray-900">{testimonial.name}</h3>
